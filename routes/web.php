@@ -1,8 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PemesananController@index')->name('landingPage');
 
 Route::get('/pendaftaran', 'Homecontroller@daftar_view')->name('pendaftaran');
 Route::post('/pendaftaranbaru', 'Homecontroller@daftar')->name('daftar');
