@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="{{ asset('landing/assets/img/logo-bengkel-las.png') }}"
-                    style="height: 100px; width: 150px;" alt="..." /></a>
+                    style="width: 160px; height: 60px;" alt="logoweb" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu

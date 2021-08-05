@@ -27,9 +27,13 @@
             <div class="container">
                 <a class="navbar-brand" href="javascript::void(0)"><img
                         src="{{ asset('landing/assets/img/logo-bengkel-las.png') }}"
-                        style="width: 130px; height: 50px;" alt="..." /></a>
+                        style="width: 160px; height: 60px;" alt="logoweb" /></a>
                 @auth
-                    <a class="navbar-brand" href="{{ route('admin.user') }}">Data User</a>
+                    <a class="navbar-brand" href="{{ route('home') }}">Home</a>
+                    <a class="navbar-brand" href="{{ route('admin.user') }}">DataUser</a>
+                    <a class="navbar-brand" href="#">DataPembelian</a>
+                    <a class="navbar-brand" href="#">DataProduk</a>
+                    <a class="navbar-brand" href="#">DataModel</a>
                 @endauth
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
