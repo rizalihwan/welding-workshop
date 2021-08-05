@@ -6,7 +6,6 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">{{ __('Login') }}
-                        @include('_components.alert')
                     </div>
 
                     <div class="card-body">
@@ -19,14 +18,14 @@
 
                                 <div class="col-md-6">
                                     <input id="username" type="text"
-                                        class="form-control @error('username') is-invalid @enderror" name="username"
+                                        class="form-control" name="username"
                                         value="{{ old('username') }}" required autocomplete="username" autofocus>
 
-                                    @error('username')
+                                    {{-- @error('username')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
-                                    @enderror
+                                    @enderror --}}
                                 </div>
                             </div>
 
