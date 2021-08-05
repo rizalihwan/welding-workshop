@@ -698,7 +698,7 @@
     <section class="page-section bg-light" id="datacontact">
         <div class="container row">
             <div class="row">
-                <div class="col-md-6 mr-5">
+                <div class="col-md-6 mr-5 ml-5">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6431688334474!2d106.74134041476891!3d-6.178496495526936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTAnNDIuNiJTIDEwNsKwNDQnMzYuNyJF!5e0!3m2!1sid!2sid!4v1628179877659!5m2!1sid!2sid"
                         width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
