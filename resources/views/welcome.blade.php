@@ -698,10 +698,10 @@
     <section class="page-section bg-dark" id="about">
         <div class="">
             <header class="masthead">
-                <div class="container">
-                    <img width="300" height="300" src="{{ asset('landing/assets/img/footer/img1.png') }}"
+                <div class="container mb-2">
+                    <img width="500" height="400" style="object-fit: cover;" src="{{ asset('landing/assets/img/footer/img1.png') }}"
                         alt="..." />
-                    <img width="300" height="300" src="{{ asset('landing/assets/img/footer/img2.png') }}"
+                    <img width="500" height="400" style="object-fit: cover;" src="{{ asset('landing/assets/img/footer/img2.png') }}"
                         alt="..." />
                 </div>
                 <div class="container">
