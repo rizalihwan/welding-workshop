@@ -49,7 +49,7 @@
                             <li><a class="dropdown-item" href="#datapesanan">Berita Pesanan</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#datacontact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About </a></li>
                     @auth
                         <li class="nav-item dropdown">
@@ -694,15 +694,39 @@
         </div>
     </section>
     <hr>
+    <!-- Contack Us-->
+    <section class="page-section bg-light" id="datacontact">
+        <div class="container row">
+            <div class="row">
+                <div class="col-md-6 mr-5">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6431688334474!2d106.74134041476891!3d-6.178496495526936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTAnNDIuNiJTIDEwNsKwNDQnMzYuNyJF!5e0!3m2!1sid!2sid!4v1628179877659!5m2!1sid!2sid"
+                        width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <div>
+                        <small>
+                            Alamat Bengkel Las : Jl. Joglo Raya No.21 E, RT.8/RW.3, Joglo, Kec. Kembangan, Kota Jakarta
+                            Barat, Daerah Khusus Ibukota Jakarta 11640
+                        </small>
+                    </div>
+                </div>
+                <div class="col-md-6 ml-3 mt-3">
+                    <u>Untuk lebih jelas mengenai pemesanan atau berkonsultasi mengenai kebutuhan anda silahkan hubungi
+                        :</u>
+                    <h2 class="featurette-heading"><span class="text-muted">0812-9776-130</span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
     <!-- Contact-->
     <section class="page-section bg-dark" id="about">
         <div class="">
             <header class="masthead">
                 <div class="container mb-2">
-                    <img width="500" height="400" style="object-fit: cover;" src="{{ asset('landing/assets/img/footer/img1.png') }}"
-                        alt="..." />
-                    <img width="500" height="400" style="object-fit: cover;" src="{{ asset('landing/assets/img/footer/img2.png') }}"
-                        alt="..." />
+                    <img width="500" height="400" style="object-fit: cover;"
+                        src="{{ asset('landing/assets/img/footer/img1.png') }}" alt="..." />
+                    <img width="500" height="400" style="object-fit: cover;"
+                        src="{{ asset('landing/assets/img/footer/img2.png') }}" alt="..." />
                 </div>
                 <div class="container">
                     <p class="justify"> Bengkel Las Aneka Karya merupakan bengkel las Professional yang sudah hadir
