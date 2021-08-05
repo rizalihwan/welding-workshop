@@ -28,6 +28,9 @@
                 <a class="navbar-brand" href="javascript::void(0)"><img
                         src="{{ asset('landing/assets/img/logo-bengkel-las.png') }}"
                         style="width: 130px; height: 50px;" alt="..." /></a>
+                @auth
+                    <a class="navbar-brand" href="{{ route('admin.user') }}">Data User</a>
+                @endauth
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
@@ -58,8 +61,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -75,6 +79,11 @@
         </nav>
 
         <main class="py-4">
+            <div class="row ml-2">
+                <div class="col-md-4">
+                    @include('_components.alert')
+                </div>
+            </div>
             @yield('content')
         </main>
     </div>

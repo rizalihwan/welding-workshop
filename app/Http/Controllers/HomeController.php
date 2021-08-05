@@ -16,6 +16,19 @@ class HomeController extends Controller
         return view('pembeli.pendaftaran');
     }
 
+    public function user()
+    {
+        return view('admin.datauser', [
+            'users' => User::where('role', 'pembeli')->paginate(5)
+        ]);
+    }
+
+    public function user_destroy(User $user)
+    {
+        $user->delete();
+        return back()->with('success', 'User di hapus!');
+    }
+
     public function daftar()
     {
         $this->validate(request(), [
