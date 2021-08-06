@@ -10,6 +10,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware('auth')->group(function () {
     Route::name('admin.')->group(function () {
         Route::get('/data-user', 'HomeController@user')->name('user');
+        Route::get('/data-pembelian', 'HomeController@pembelian')->name('pembelian');
         Route::delete('/{user}/destroy', 'HomeController@user_destroy')->name('user.destroy');
 
         Route::resource('product', 'ProductController');

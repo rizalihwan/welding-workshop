@@ -31,7 +31,7 @@
                 @auth
                     <a class="navbar-brand" href="{{ route('home') }}">Home</a>
                     <a class="navbar-brand" href="{{ route('admin.user') }}">DataUser</a>
-                    <a class="navbar-brand" href="#">DataPembelian</a>
+                    <a class="navbar-brand" href="{{ route('admin.pembelian') }}">DataPembelian</a>
                     <a class="navbar-brand" href="{{ route('admin.product.index') }}">DataProduk</a>
                     <a class="navbar-brand" href="{{ route('admin.model.index') }}">DataModel</a>
                 @endauth

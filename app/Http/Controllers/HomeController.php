@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\User;
 
 class HomeController extends Controller
@@ -20,6 +21,13 @@ class HomeController extends Controller
     {
         return view('admin.datauser', [
             'users' => User::where('role', 'pembeli')->paginate(5)
+        ]);
+    }
+
+    public function pembelian()
+    {
+        return view('admin.pembelian', [
+            'orders' => Order::paginate(5)
         ]);
     }
 

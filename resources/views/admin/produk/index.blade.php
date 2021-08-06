@@ -53,7 +53,7 @@
                                                 <img src="{{ asset('product_images/' . $key->img) }}" style="width: 100px; height: 100px; object-fit: cover;" alt="productImg">
                                             </td>
                                             <td>
-                                                <a href="{{ route('admin.product.edit', $key->id) }}" class="btn btn-warning mb-1 mr-1">Edit</a>
+                                                {{-- <a href="{{ route('admin.product.edit', $key->id) }}" class="btn btn-warning mb-1 mr-1">Edit</a> --}}
                                                 <form action="{{ route('admin.product.destroy', $key->id) }}"
                                                     method="post">
                                                     @csrf
