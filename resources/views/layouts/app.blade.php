@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="javascript::void(0)"><img
+                <a class="navbar-brand" href="{{ route('landingPage') }}"><img
                         src="{{ asset('landing/assets/img/logo-bengkel-las.png') }}"
                         style="width: 160px; height: 60px;" alt="logoweb" /></a>
                 @auth
