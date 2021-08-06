@@ -13,8 +13,8 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin.produk.index', [
+    
+{        return view('admin.produk.index', [
             'products' => Product::paginate(5)
         ]);
     }
@@ -57,7 +57,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +68,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produk = Product::findOrFail($id);
+        return view('admin.produk.edit-produk', compact('produk'));
     }
 
     /**
@@ -80,7 +81,28 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $produk = Product::findOrFail($id);
+        if(request()->file('product_images') == "")
+        {
+            $produk->img = $produk->img;
+        } else {
+            if(request()->hasFile('img'))
+            {
+                $file = 'product_images/'.$product_images->img;
+                if(is_file($file))
+                {
+                    unlink($file);
+                }
+                $file = request()->file('img');
+                $filename = time().rand(100,999).".".$file->getClientOriginalName();
+                request()->file('img')->move('product_images/', $filename);
+                $produk->img = $filename;
+                $produk->img = $request->img;
+            }
+        }
+        $produk->save();
+        session()->flash('success', 'Data Was Updated Successfully');
+        return redirect()->route('admin.product.index');
     }
 
     /**

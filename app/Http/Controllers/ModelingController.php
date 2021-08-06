@@ -71,7 +71,8 @@ class ModelingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $model = Modeling::findOrFail($id);
+        return view('admin.model.edit-model', compact('model'));
     }
 
     /**

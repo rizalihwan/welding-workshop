@@ -30,10 +30,10 @@
                         style="width: 160px; height: 60px;" alt="logoweb" /></a>
                 @auth
                     <a class="navbar-brand" href="{{ route('home') }}">Home</a>
-                    <a class="navbar-brand" href="{{ route('admin.user') }}">DataUser</a>
-                    <a class="navbar-brand" href="#">DataPembelian</a>
-                    <a class="navbar-brand" href="{{ route('admin.product.index') }}">DataProduk</a>
-                    <a class="navbar-brand" href="{{ route('admin.model.index') }}">DataModel</a>
+                    <a class="navbar-brand" href="{{ route('admin.user') }}">Data User</a>
+                    <a class="navbar-brand" href="#">Data Pembelian</a>
+                    <a class="navbar-brand" href="{{ route('admin.product.index') }}">Data Produk</a>
+                    <a class="navbar-brand" href="{{ route('admin.model.index') }}">Data Model</a>
                 @endauth
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
