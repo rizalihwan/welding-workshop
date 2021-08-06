@@ -27,7 +27,7 @@
 <body id="page-top">
     <!-- Navigation-->
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background: black;">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="{{ asset('landing/assets/img/logo-bengkel-las.png') }}"
                     style="width: 160px; height: 60px;" alt="logoweb" /></a>
@@ -38,7 +38,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,7 +46,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#katalog">Katalog</a></li>
-                            <li><a class="dropdown-item" href="#datapesanan">Berita Pesanan</a></li>
+                            @auth
+                                <li><a class="dropdown-item" href="#datapesanan">Berita Pesanan</a></li>
+                            @endauth
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#datacontact">Contact</a></li>

@@ -33,7 +33,25 @@
             </div>
             <div class="row">
                 @auth
-
+                    @forelse ($products as $key)
+                        <div class="col-lg-4 col-sm-6 mb-4">
+                            <div class="portfolio-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <a class="portfolio-link" href="{{ route('pembeli.pesan', $key->id) }}">
+                                            <img style="width: 100%; height: 300px; object-fit: cover;"
+                                                src="{{ asset('product_images/' . $key->img) }}" alt="productImg" />
+                                        </a>
+                                        <div class="portfolio-caption">
+                                            <div class="portfolio-caption-heading"><b>{{ $key->name }}</b></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <h3 class="text-danger text-center">Katalog Kosong!</h3>
+                    @endforelse
                 @else
                     @forelse ($products as $key)
                         <div class="col-lg-4 col-sm-6 mb-4">
@@ -58,28 +76,39 @@
             </div>
         </div>
     </section>
-    <section class="page-section bg-light" id="datapesanan">
-        <div class="container">
-            <div class="text-center mb-2">
-                <h2 class="section-heading text-uppercase">Berita Pesanan</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading"><span class="text-muted">Irsad Hidayattullah</span></h2>
-                    <p class="lead">Jl. Merdeka no. 28 01/08 Kel. Cikundul, Kec. Lembursitu, Sukabumi</p>
-                    <p class="lead">Sukabumi</p>
-                    <p class="lead">-</p>
-                    <p class="lead">Jawa Barat</p>
-                    <p class="lead">43168</p>
-                    <p class="lead">081212*****</p>
+    @auth
+        <section class="page-section bg-light" id="datapesanan">
+            <div class="container">
+                <div class="text-center mb-2">
+                    <h2 class="section-heading text-uppercase">Berita Pesanan</h2>
                 </div>
-                <div class="col-md-5 order-md-1">
-                    <img src="{{ asset('landing/assets/img/pintu/model1.png') }}" width="345" height="345"
-                        class="rounded-start" alt="...">
-                </div>
+                @forelse ($orders as $key)
+                    <div class="row mb-2">
+                        <div class="col-md-7 order-md-2">
+                            <h2 class="featurette-heading"><span class="text-muted">{{ $key->full_name }}</span></h2>
+                            <p class="lead">{{ $key->address }}</p>
+                            <p class="lead">{{ $key->district }}</p>
+                            <p class="lead">-</p>
+                            <p class="lead">{{ $key->province }}</p>
+                            <p class="lead">{{ $key->postal_code }}</p>
+                            <p class="lead">{{ $key->phone }}</p>
+                        </div>
+                        <div class="col-md-5 order-md-1">
+                            <img src="{{ asset('model_images/' . $key->modeling->img) }}" width="345" height="345"
+                                class="rounded-start" alt="modelImg">
+                            <p>
+                                {{ $key->modeling->product->name . ' - ' . $key->modeling->name}}
+                            </p>
+                        </div>
+                    </div>
+                @empty
+                    <div class="row mb-2">
+                        <h2 class="text-danger text-center">Anda Belum Memesan!</h2>
+                    </div>
+                @endforelse
             </div>
-        </div>
-    </section>
+        </section>
+    @endauth
     <section class="page-section bg-light" id="datacontact">
         <div class="container">
             <div class="text-center mb-2">
@@ -107,8 +136,8 @@
             </div>
         </div>
     </section>
-    <section class="page-section bg-dark" id="about">
-        <div class="">
+    <section class="page-section bg-light" id="about">
+        <div>
             <header class="masthead">
                 <div class="container mb-2">
                     <img width="500" height="400" style="object-fit: cover;"
@@ -140,68 +169,4 @@
             </div>
         </div>
     </footer>
-    <!-- Portfolio Modals-->
-    <!-- Portfolio item 1 modal popup-->
-    <div class="portfolio-modal modal fade" id="modalpesan" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal"><img
-                        src="{{ asset('landing/assets/img/close-icon.svg') }}" alt="Close modal" /></div>
-                <h2 class="featurette-heading"><span class="text-muted">Form Order</span></h2>
-                <br>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="row featurette">
-                            <div class="col-md-7 order-md-2">
-                                <!-- <- -->
-                                <form>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Alamat Lengkap</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Kota</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Kabupaten</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Provinsi</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Kode Pos</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <div class="mb-1">
-                                        <label for="exampleInputEmail1" class="form-label">Telepon</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                            aria-describedby="emailHelp">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">PESAN SEKARANG</button>
-                                </form>
-                            </div>
-                            <div class="col-md-5 order-md-1">
-                                <img src="{{ asset('landing/assets/img/pintu/model1.png') }}" width="345" height="345"
-                                    class="rounded-start" alt="...">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection
