@@ -68,7 +68,7 @@
                                                     alt="modelImg">
                                             </td>
                                             <td>
-                                                <a href="{{ route('admin.model.edit', $key->id) }}"
+                                                <a href="{{ route('admin.model-edit', $key->id) }}"
                                                     class="btn btn-warning mb-1 mr-1">Edit</a>
                                                 <form action="{{ route('admin.model.destroy', $key->id) }}" method="post">
                                                     @csrf
